@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Animation</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+        }
+        .circle {
+            width: 150px;
+            height: 150px;
+            background-color: #ff9999; /* ピンク */
+            border-radius: 50%;
+        }
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #ff4d4d; /* 赤 */
+        }
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 70px solid transparent;
+            border-right: 70px solid transparent;
+            border-bottom: 140px solid #ff6666; /* 明るい赤 */
+        }
+        .polygon {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 80px 140px 80px;
+            border-color: transparent transparent #ffcccc transparent; /* 淡いピンク */
+        }
+        .line {
+            width: 200px;
+            height: 5px;
+            background-color: #ff9999; /* ピンクの線 */
+        }
+        .dot {
+            width: 30px;
+            height: 30px;
+            background-color: #ff4d4d; /* 赤い点 */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
+        <div class="shape polygon"></div>
+        <div class="shape line"></div>
+        <div class="shape dot"></div>
+    </div>
+
+    <!-- Anime.jsのライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
