@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinkansen Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: transparent; /* 背景を無色に */
+        }
+
+        /* 新幹線全体のスタイル */
+        .shinkansen {
+            position: absolute;
+            display: flex;
+            bottom: 60px;
+            left: -1000px; /* 初期位置を左外へ */
+        }
+
+        /* 先頭車両の丸み */
+        .front-car {
+            width: 150px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 80px 20px 20px 80px; /* 丸めた形状（逆に修正） */
+            border: 2px solid #000;
+            margin-right: 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /* 通常の車両 */
+        .car {
+            width: 150px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: 2px solid #000;
+            margin-right: 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /* 最後尾車両の丸み */
+        .rear-car {
+            width: 150px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 20px 80px 80px 20px; /* 丸めた形状（逆に修正） */
+            border: 2px solid #000;
+            margin-right: 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /* 窓のスタイル（四角、水色） */
+        .window {
+            width: 15px;
+            height: 15px;
+            background-color: #87CEFA; /* 水色 */
+            border: 2px solid #000; /* 黒い枠線 */
+        }
+
+        /* ドアのスタイル */
+        .door {
+            width: 25px;
+            height: 35px;
+            background-color: #fff;
+            border: 2px solid #000; /* 黒い枠線 */
+        }
+
+        /* 新幹線のアニメーション */
+        @keyframes moveShinkansen {
+            0% {
+                left: -1000px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .shinkansen {
+            animation: moveShinkansen 7s linear infinite; /* 7秒でループ */
+        }
+
+        /* レール */
+        .rail {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+            height: 5px;
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="shinkansen">
+        <!-- 先頭車両 -->
+        <div class="front-car">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="door"></div>
+        </div>
+
+        <!-- 通常車両 -->
+        <div class="car">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="door"></div>
+        </div>
+        <div class="car">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="door"></div>
+        </div>
+        <div class="car">
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="door"></div>
+        </div>
+
+        <!-- 最後尾車両 -->
+        <div class="rear-car">
+            <div class="door"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+            <div class="window"></div>
+        </div>
+    </div>
+    
+    <div class="rail"></div>
+
+</body>
+</html>
